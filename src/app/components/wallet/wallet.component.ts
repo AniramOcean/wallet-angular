@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 export interface Purchase {
   title: string;
   price: number;
+  comment?: string;
+  date?: object
 }
 
 const data: Purchase[] = [
   {
     title: 'Проезд на метро',
-    price: 40
+    price: 50,
+    comment: 'Проезд подорожал'
   },
   {
     title: 'Iphone XXL',
-    price: 120000
+    price: 120000,
+    comment: 'Подарок на день рождения',
+    date: ['12-01-2020']
   },
   {
     title: 'Дошик',
@@ -20,14 +25,16 @@ const data: Purchase[] = [
   },
   {
     title: 'Coffee',
-    price: 3000
+    price: 3000,
+    comment: 'Хватит на 2 месяца'
   },
 ]
 
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
-  styleUrls: ['./wallet.component.scss']
+  styleUrls: ['./wallet.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WalletComponent implements OnInit {
   purchases: Purchase[] = [];

@@ -1,16 +1,47 @@
 .wallet {
-  border: 5px solid #eee;
+  border: 5px solid var(--tui-support-12);
+
+  &-header {
+    justify-content: center;
+    background-color: var(--tui-support-12);
+    margin: 0 auto;
+    padding: 10px;
+  }
 }
 
-.wallet-header {
-  background-color: #ffc94c;
-  padding: 15px;
+.purchase-container {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .summary {
   background-color: #eee;
+  padding: 20px 40px;
+  border-top: 2px solid var(--tui-support-12);
 }
 
 .summary-label {
   color: gray;
 }
+
+
+.btn {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+
+  &-dang {
+    background-color: var(--tui-error-fill);
+    border-color: var(--tui-error-bg-hover);
+  }
+  &-ok {
+    background-color: var(--tui-success-fill);
+    border-color: var(--tui-success-bg-hover);
+  }
+}
+
+
+

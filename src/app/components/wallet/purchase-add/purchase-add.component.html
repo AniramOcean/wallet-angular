@@ -1,29 +1,49 @@
-<form [formGroup]='form' (submit)='onSubmit()'>
-  <div class="row">
-    <div class="col">
-      <div class="input-group mb-2">
-        <input
-          [formControlName]="'title'" type="text" class="form-control"
-          aria-label="Название" placeholder="Название"
-          [class.is-invalid]="form.get('title')?.invalid && form.get('title')?.touched ">
-      </div>
-    </div>
-  </div>
+  <div class="tui-container">
+    <form [formGroup]="form" (submit)='onSubmit()'>
+      <div class="tui-row tui-row_sme">
+        <div class="tui-col_8 form-content">
+          <div class="tui-form__row">
+            <tui-input tuiTextfieldExampleText="Iphone XXIX" formControlName="title">
+              Purchase's name
+              <span class="tui-required"></span>
+            </tui-input>
+            <tui-field-error formControlName="title"></tui-field-error>
+          </div>
 
-  <div class="row">
-    <div class="col">
-      <div class="input-group mb-2">
-        <input formControlName='price' type="text" class="form-control" placeholder="Стоимость" aria-label="Стоимость">
-      </div>
-    </div>
-  </div>
+          <div class="tui-form__row">
+            <tui-input-number formControlName="price" [min]="10" [max]="200000">
+              Costs
+              <span *ngIf="price.invalid && (price.dirty || price.touched)" class="tui-required">
+                <span *ngIf="price.errors?.required">{{getError(price)}}</span>
+                <span *ngIf="price.errors?.min">Minimum price is 20</span>
+                <span *ngIf="price.errors?.max">Maximum price is 200000</span>
+                <span *ngIf="price.errors?.pattern">Price can be only number.</span>
+              </span>
+            </tui-input-number>
+            <tui-field-error formControlName="price"></tui-field-error>
 
-  <div class="row">
-    <div class="col">
-      <div class="input-group mb-2 justify-content-center">
-        <button [disabled]="form.invalid" type="submit" class="btn btn-sm btn-outline-secondary">Добавить расходы</button>
-      </div>
-    </div>
-  </div>
-</form>
 
+          </div>
+
+          <div class="tui-form__row">
+            <tui-input-date tuiTextfieldExampleText="20.09.2021" formControlName="date">
+              Дата покупки
+            </tui-input-date>
+          </div>
+
+          <div class="tui-form__row">
+            <tui-input tuiTextfieldExampleText="Comment here" formControlName="comment">
+              Comment
+            </tui-input>
+          </div>
+
+          <div class="tui-form__buttons btn-container">
+            <button tuiButton class="tui-form__button" size="l" type="submit">
+              Добавить
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>

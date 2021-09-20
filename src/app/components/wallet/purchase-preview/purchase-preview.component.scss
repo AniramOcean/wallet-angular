@@ -1,3 +1,20 @@
-.badge-secondary {
-  background-color: gray;
+.support-01 {
+  background-color: var(--tui-support-01);
+}
+
+.purchase-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 40px;
+  border-top: 1px solid var(--tui-support-11);
+}
+
+.purchase-info {
+  margin-right: 2rem;
+  text-align: right;
+}
+
+.purchase-title {
+  padding-top: 10px;
 }

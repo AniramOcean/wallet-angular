@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { WalletComponent } from './wallet.component';
 import { PurchasePreviewModule } from './purchase-preview/purchase-preview.module';
 import { PurchaseAddModule } from './purchase-add/purchase-add.module';
-
-
+import {TuiMoneyModule} from '@taiga-ui/addon-commerce';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,8 @@ import { PurchaseAddModule } from './purchase-add/purchase-add.module';
   imports: [
     CommonModule,
     PurchasePreviewModule,
-    PurchaseAddModule
+    PurchaseAddModule,
+    TuiMoneyModule,
   ]
 })
 export class WalletModule { }

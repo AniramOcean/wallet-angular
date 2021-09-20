@@ -1,6 +1,24 @@
-<div class="d-flex justify-content-between align-items-center p-2 purchase">
-  {{ purchase.title }}
-  <span class="badge badge-secondary">
-    {{ purchase.price }}
-  </span>
+<div class="tui-container tui-skeleton_center purchase">
+  <div class="purchase-main tui-row tui-row_sme">
+    <div class="tui-col tui-col_6 purchase-title">
+      <div class="tui-text_bold">{{ purchase.title }}</div>
+      <p *ngIf='purchase.comment'>
+        {{ purchase.comment}}
+      </p>
+    </div>
+    <span class="tui-col tui-col_4 purchase-info">
+      <tui-badge *ngIf='purchase.date'
+                 class="tui-space_horizontal-2 tui-space_vertical-2 support-01"
+                 status="custom"
+                 value="{{purchase.date}}"
+                 [hoverable]="true"
+      ></tui-badge>
+      <tui-badge class="tui-space_horizontal-2 tui-space_vertical-2 support-01"
+                 status="custom"
+                 value="{{purchase.price}}"
+                 [hoverable]="true"
+      ></tui-badge>
+    </span>
+  </div>
 </div>
+
