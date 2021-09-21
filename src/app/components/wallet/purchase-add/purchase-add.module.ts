@@ -4,15 +4,16 @@ import { PurchaseAddComponent } from './purchase-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {
   TuiFieldErrorModule,
-  TuiInputDateModule,
+  TuiInputDateModule, TuiInputDateTimeModule,
   TuiInputModule,
   TuiInputNumberModule, TuiUnfinishedValidatorModule,
 } from "@taiga-ui/kit";
 import {TuiButtonModule, TuiTextfieldControllerModule} from "@taiga-ui/core";
+import {TuiPortalHostModule} from "@taiga-ui/cdk";
 
 @NgModule({
   declarations: [
-    PurchaseAddComponent
+    PurchaseAddComponent,
   ],
   exports: [
     PurchaseAddComponent
@@ -27,6 +28,8 @@ import {TuiButtonModule, TuiTextfieldControllerModule} from "@taiga-ui/core";
     TuiTextfieldControllerModule,
     TuiButtonModule,
     TuiUnfinishedValidatorModule,
+    TuiInputDateTimeModule,
+    TuiPortalHostModule,
   ]
 })
 export class PurchaseAddModule { }

@@ -21,15 +21,17 @@
               </span>
             </tui-input-number>
             <tui-field-error formControlName="price"></tui-field-error>
-
-
           </div>
 
           <div class="tui-form__row">
-            <tui-input-date tuiTextfieldExampleText="20.09.2021" formControlName="date">
-              Дата покупки
-            </tui-input-date>
+            <tui-portal-host>
+              <tui-input-date formControlName="date">
+                Choose a date
+              </tui-input-date>
+              <tui-field-error formControlName="date"></tui-field-error>
+            </tui-portal-host>
           </div>
+
 
           <div class="tui-form__row">
             <tui-input tuiTextfieldExampleText="Comment here" formControlName="comment">
@@ -38,7 +40,7 @@
           </div>
 
           <div class="tui-form__buttons btn-container">
-            <button tuiButton class="tui-form__button" size="l" type="submit">
+            <button [disabled]="form.invalid" tuiButton class="tui-form__button" size="l" type="submit">
               Добавить
             </button>
           </div>

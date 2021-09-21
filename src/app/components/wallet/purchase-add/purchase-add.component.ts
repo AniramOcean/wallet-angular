@@ -25,7 +25,7 @@ export class PurchaseAddComponent implements OnInit {
         Validators.pattern(/^\d+$/)
       ]),
       comment: new FormControl(''),
-      date: new FormControl(new TuiDay(2020, 9, 20)),
+      date: new FormControl(new TuiDay(2017, 2, 15)),
     });
   }
 
@@ -36,6 +36,7 @@ export class PurchaseAddComponent implements OnInit {
       return
     }
     this.add.emit(this.form.value);
+    console.log(this.form.get('date').value)
   }
 
   getError(controlName: string): string {

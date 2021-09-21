@@ -4,20 +4,22 @@ export interface Purchase {
   title: string;
   price: number;
   comment?: string;
-  date?: object
+  date?: Date;
+  myDate?: any;
 }
 
 const data: Purchase[] = [
   {
     title: 'Проезд на метро',
     price: 50,
-    comment: 'Проезд подорожал'
+    comment: 'Проезд подорожал',
+    myDate: new Date()
   },
   {
     title: 'Iphone XXL',
     price: 120000,
     comment: 'Подарок на день рождения',
-    date: ['12-01-2020']
+    date: new Date()
   },
   {
     title: 'Дошик',
