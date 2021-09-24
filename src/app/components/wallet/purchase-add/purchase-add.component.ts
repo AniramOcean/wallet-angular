@@ -12,6 +12,10 @@ import {TuiDay} from "@taiga-ui/cdk";
 export class PurchaseAddComponent implements OnInit {
   @Output() add = new EventEmitter<Purchase>();
   form: any;
+  currentFullDate = new Date();
+  currentDay = this.currentFullDate.getDate();
+  currentYear = this.currentFullDate.getFullYear();
+  currentMonth = this.currentFullDate.getMonth() + 1;
 
   constructor() { }
 
@@ -25,7 +29,7 @@ export class PurchaseAddComponent implements OnInit {
         Validators.pattern(/^\d+$/)
       ]),
       comment: new FormControl(''),
-      date: new FormControl(new TuiDay(2017, 2, 15)),
+      date: new FormControl(new TuiDay(this.currentYear, this.currentMonth, this.currentDay)),
     });
   }
 
