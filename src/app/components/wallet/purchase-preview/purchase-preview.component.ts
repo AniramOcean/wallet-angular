@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Purchase } from '../wallet.component';
 
 @Component({
@@ -8,11 +8,24 @@ import { Purchase } from '../wallet.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PurchasePreviewComponent implements OnInit {
-  @Input() purchase!: Purchase;
+  @Input()
+  purchase!: Purchase;
+
+  @Input()
+  isCommentVisible = false;
+
+  @Output()
+  clicked = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(event: MouseEvent) {
+    if (!this.purchase.comment) return
+    event.stopPropagation();
+    this.clicked.emit();
   }
 
 }

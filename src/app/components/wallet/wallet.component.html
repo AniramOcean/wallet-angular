@@ -1,28 +1,34 @@
-<div class="tui-container tui-container_adaptive tui-text_body-l-2 wallet">
+<div class="tui-text_body-l-2 wallet">
   <div class="">
     <div class="tui-row tui-row_sme wallet-header">
-      <h4>Мой первый кошелек</h4>
+      <h4>Кошелек расходов</h4>
     </div>
 
     <div class="tui-row tui-row_sme purchase-container">
-      <div class="tui-col_3">
-        Ваши расходы за неделю
+      <div class="tui-col_5">
+        Мои расходы за неделю
       </div>
       <div class="tui-col tui-col_md-2">
         <button type="button" class="btn"
           [class.btn-ok]="!isAddPurchaseVisible"
           [class.btn-dang]="isAddPurchaseVisible"
-          (click)="onClick()">{{ isAddPurchaseVisible ? '-' : '+' }}</button>
+          (click)="onClick()">
+          <tui-svg src="{{ isAddPurchaseVisible ? 'tuiIconCloseLarge' : 'tuiIconMoreHorLarge' }}"></tui-svg>
+        </button>
       </div>
     </div>
 
     <app-purchase-add *ngIf="isAddPurchaseVisible" (add)="onAdd($event)"></app-purchase-add>
 
     <div class="tui-row tui-row_sme">
-      <div class="tui-col tui-col_8">
-        <ul class="">
-          <li *ngFor="let purchase of purchases">
-            <app-purchase-preview [purchase]="purchase"></app-purchase-preview>
+      <div class="tui-col tui-col_12">
+        <ul class="purchase-list_container">
+          <li *ngFor="let purchase of purchases; let index = index">
+            <app-purchase-preview
+              [isCommentVisible]="index === currentIndex"
+              [purchase]="purchase"
+              (clicked)="onPurchaseClick(index)"
+            ></app-purchase-preview>
           </li>
         </ul>
       </div>

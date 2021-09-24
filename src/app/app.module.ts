@@ -1,6 +1,6 @@
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {TuiDialogModule, TuiNotificationsModule, TUI_SANITIZER, TuiRootModule} from "@taiga-ui/core";
+import {TUI_SANITIZER, TuiRootModule} from "@taiga-ui/core";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,8 +16,6 @@ import { WalletModule } from './components/wallet/wallet.module';
     WalletModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TuiDialogModule,
-    TuiNotificationsModule,
     TuiRootModule,
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],

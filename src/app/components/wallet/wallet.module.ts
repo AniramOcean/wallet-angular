@@ -4,6 +4,7 @@ import { WalletComponent } from './wallet.component';
 import { PurchasePreviewModule } from './purchase-preview/purchase-preview.module';
 import { PurchaseAddModule } from './purchase-add/purchase-add.module';
 import {TuiMoneyModule} from '@taiga-ui/addon-commerce';
+import {TuiSvgModule} from "@taiga-ui/core";
 
 @NgModule({
   declarations: [
@@ -12,11 +13,12 @@ import {TuiMoneyModule} from '@taiga-ui/addon-commerce';
   exports: [
     WalletComponent
   ],
-  imports: [
-    CommonModule,
-    PurchasePreviewModule,
-    PurchaseAddModule,
-    TuiMoneyModule,
-  ]
+    imports: [
+        CommonModule,
+        PurchasePreviewModule,
+        PurchaseAddModule,
+        TuiMoneyModule,
+        TuiSvgModule,
+    ]
 })
 export class WalletModule { }

@@ -1,5 +1,7 @@
 .wallet {
   border: 5px solid var(--tui-support-12);
+  max-width: 700px;
+  margin: 0 auto;
 
   &-header {
     justify-content: center;
@@ -14,6 +16,11 @@
   justify-content: center;
   align-items: center;
 }
+.purchase-list_container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
 
 .summary {
   background-color: #eee;
@@ -27,19 +34,23 @@
 
 
 .btn {
+  float: right;
+  display: flex;
+  justify-content: center;
   width: 35px;
   height: 35px;
   padding: 5px;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 10px;
+  background: white;
 
   &-dang {
-    background-color: var(--tui-error-fill);
-    border-color: var(--tui-error-bg-hover);
+    border-color: var(--tui-error-fill);
+    color: var(--tui-error-fill)
   }
   &-ok {
-    background-color: var(--tui-success-fill);
-    border-color: var(--tui-success-bg-hover);
+    border-color: var(--tui-success-fill);
+    color: var(--tui-success-fill);
   }
 }
 

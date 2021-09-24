@@ -13,13 +13,11 @@ const data: Purchase[] = [
     title: 'Проезд на метро',
     price: 50,
     comment: 'Проезд подорожал',
-    myDate: new Date()
   },
   {
     title: 'Iphone XXL',
     price: 120000,
     comment: 'Подарок на день рождения',
-    date: new Date()
   },
   {
     title: 'Дошик',
@@ -42,6 +40,7 @@ export class WalletComponent implements OnInit {
   purchases: Purchase[] = [];
   isAddPurchaseVisible = false;
   summary = 0;
+  currentIndex = -1;
 
   constructor() { }
 
@@ -58,6 +57,12 @@ export class WalletComponent implements OnInit {
     this.purchases.push(purchase)
     this.onClick();
     this.updateSum()
+  }
+
+  onPurchaseClick(index: number) {
+    this.currentIndex = this.currentIndex === index
+      ? -1
+      : index;
   }
 
   private updateSum() {

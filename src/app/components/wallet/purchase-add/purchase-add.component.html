@@ -1,5 +1,4 @@
-  <div class="tui-container">
-    <form [formGroup]="form" (submit)='onSubmit()'>
+    <form [formGroup]="form" (submit)='onSubmit()' [tuiTextfieldCleaner]="true">
       <div class="tui-row tui-row_sme">
         <div class="tui-col_8 form-content">
           <div class="tui-form__row">
@@ -24,12 +23,10 @@
           </div>
 
           <div class="tui-form__row">
-            <tui-portal-host>
-              <tui-input-date formControlName="date">
-                Choose a date
-              </tui-input-date>
-              <tui-field-error formControlName="date"></tui-field-error>
-            </tui-portal-host>
+            <tui-input-date formControlName="date" tuiDropdownLimitAlign="right">
+              Choose a date
+            </tui-input-date>
+            <tui-field-error formControlName="date"></tui-field-error>
           </div>
 
 
@@ -48,4 +45,3 @@
         </div>
       </div>
     </form>
-  </div>
