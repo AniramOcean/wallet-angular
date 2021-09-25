@@ -1,12 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-
-export interface Purchase {
-  title: string;
-  price: number;
-  comment?: string;
-  date?: Date;
-  myDate?: any;
-}
+import {Purchase} from "../../shared/interfaces/Purchase";
+import {PurchasesService} from "./purchases.service";
 
 const data: Purchase[] = [
   {
@@ -37,16 +31,21 @@ const data: Purchase[] = [
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WalletComponent implements OnInit {
-  purchases: Purchase[] = [];
   isAddPurchaseVisible = false;
-  summary = 0;
   currentIndex = -1;
 
-  constructor() { }
+  constructor(private purchasesService: PurchasesService) { }
+
+  get purchases(): Purchase[] {
+    return this.purchasesService.walletPurchases;
+  }
+
+  get summary(): number {
+    return this.purchasesService.walletSummary;
+  }
 
   ngOnInit(): void {
-    this.purchases = data;
-    this.updateSum();
+    this.purchasesService.setPurchases(data);
   }
 
   onClick() {
@@ -54,19 +53,14 @@ export class WalletComponent implements OnInit {
   }
 
   onAdd(purchase: Purchase) {
-    this.purchases.push(purchase)
+    this.purchasesService.addPurchase(purchase);
     this.onClick();
-    this.updateSum()
   }
 
   onPurchaseClick(index: number) {
     this.currentIndex = this.currentIndex === index
       ? -1
       : index;
-  }
-
-  private updateSum() {
-    this.summary = this.purchases.reduce((acc, sum) => acc + +sum.price, 0)
   }
 
 }

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { Purchase } from '../wallet.component';
 import {TuiDay} from "@taiga-ui/cdk";
+import {Purchase} from "../../../shared/interfaces/Purchase";
 
 @Component({
   selector: 'app-purchase-add',
@@ -37,10 +37,9 @@ export class PurchaseAddComponent implements OnInit {
 
   onSubmit() {
     if (this.form.invalid) {
-      return
+      return;
     }
     this.add.emit(this.form.value);
-    console.log(this.form.get('date').value)
   }
 
   getError(controlName: string): string {
