@@ -2,28 +2,6 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Purchase} from "../../shared/interfaces/Purchase";
 import {PurchasesService} from "./purchases.service";
 
-const data: Purchase[] = [
-  {
-    title: 'Проезд на метро',
-    price: 50,
-    comment: 'Проезд подорожал',
-  },
-  {
-    title: 'Iphone XXL',
-    price: 120000,
-    comment: 'Подарок на день рождения',
-  },
-  {
-    title: 'Дошик',
-    price: 100
-  },
-  {
-    title: 'Coffee',
-    price: 3000,
-    comment: 'Хватит на 2 месяца'
-  },
-]
-
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
@@ -45,7 +23,7 @@ export class WalletComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.purchasesService.setPurchases(data);
+    this.purchasesService.initialize();
   }
 
   onClick() {

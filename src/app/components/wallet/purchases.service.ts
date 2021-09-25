@@ -1,19 +1,30 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {Purchase} from "../../shared/interfaces/Purchase";
+import {IPurchasesApiService, IPurchasesApiServiceToken} from "../../shared/interfaces/IPurchasesApiService";
 
 @Injectable()
 export class PurchasesService {
   private purchases: Purchase[] = [];
   private summary = 0;
 
+  constructor(
+    @Inject(IPurchasesApiServiceToken)
+    private purchaseApiService: IPurchasesApiService) {
+  }
+
   get walletPurchases(): Purchase[] {
     return this.purchases;
   }
+
   get walletSummary(): number {
     return this.summary;
   }
 
-  constructor() { }
+  initialize() {
+    return this.purchaseApiService.getAll().subscribe(data => {
+      this.setPurchases(data);
+    })
+  }
 
   setPurchases(purchases: Purchase[]) {
     this.purchases = purchases;
