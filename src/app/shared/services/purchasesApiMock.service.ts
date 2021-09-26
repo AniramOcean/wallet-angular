@@ -17,20 +17,24 @@ export class PurchasesApiMockService implements IPurchasesApiService{
     return of(
       [
       {
+        id: 1,
         title: 'Проезд на метро',
         price: 50,
         comment: 'Проезд подорожал',
       },
       {
+        id: 2,
         title: 'Iphone XXL',
         price: 120000,
         comment: 'Подарок на день рождения',
       },
       {
+        id: 3,
         title: 'Дошик',
         price: 100
       },
       {
+        id: 4,
         title: 'Coffee',
         price: 3000,
         comment: 'Хватит на 2 месяца'

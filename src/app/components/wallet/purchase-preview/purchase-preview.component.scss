@@ -5,17 +5,24 @@
 .purchase-main {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin: 10px 40px;
   border-top: 1px solid var(--tui-support-11);
   cursor: pointer;
 }
 
 .purchase-info {
-  margin-right: 2rem;
   text-align: right;
 }
 
 .purchase-title {
   padding-top: 10px;
+}
+
+.btn {
+  padding: 5px;
+  border-radius: 10px;
+  background: white;
+  border: 2px solid var(--tui-error-fill);
+  color: var(--tui-error-fill)
 }

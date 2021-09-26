@@ -28,6 +28,7 @@
               [isCommentVisible]="index === currentIndex"
               [purchase]="purchase"
               (clicked)="onPurchaseClick(index)"
+              (deleted)="onPurchaseDelete(index)"
             ></app-purchase-preview>
           </li>
         </ul>

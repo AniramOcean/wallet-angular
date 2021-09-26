@@ -36,6 +36,11 @@ export class PurchasesService {
     this.updateSum();
   }
 
+  deletePurchase(index: number) {
+    this.purchases.splice(index, 1);
+    this.updateSum();
+  }
+
   private updateSum() {
     this.summary = this.purchases
       .reduce((acc, sum) => acc + +sum.price, 0);

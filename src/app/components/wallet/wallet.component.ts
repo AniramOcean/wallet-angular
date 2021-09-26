@@ -41,4 +41,8 @@ export class WalletComponent implements OnInit {
       : index;
   }
 
+  onPurchaseDelete(index: number) {
+    this.purchasesService.deletePurchase(index);
+  }
+
 }
