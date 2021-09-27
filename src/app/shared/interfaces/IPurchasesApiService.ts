@@ -7,7 +7,7 @@ export const IPurchasesApiServiceToken = new InjectionToken('IPurchasesApiServic
 export interface IPurchasesApiService {
   getAll(): Observable<Purchase[]>;
 
-  // add(entity: Purchase): Observable<void>;
-  //
-  // delete(id: number): Observable<void>;
+  add(entity: Purchase): Observable<void>;
+
+  delete(id: number): Observable<void>;
 }

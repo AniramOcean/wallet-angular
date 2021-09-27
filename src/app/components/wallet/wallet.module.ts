@@ -7,7 +7,7 @@ import {TuiMoneyModule} from '@taiga-ui/addon-commerce';
 import {TuiSvgModule} from "@taiga-ui/core";
 import {PurchasesService} from "./purchases.service";
 import {IPurchasesApiServiceToken} from "../../shared/interfaces/IPurchasesApiService";
-import {PurchasesApiMockService} from "../../shared/services/purchasesApiMock.service";
+import {PurchasesApiService} from "../../shared/services/purchasesApi.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import {PurchasesApiMockService} from "../../shared/services/purchasesApiMock.se
   ],
   providers: [
     PurchasesService,
-    {provide: IPurchasesApiServiceToken, useClass: PurchasesApiMockService}
+    {provide: IPurchasesApiServiceToken, useClass: PurchasesApiService}
   ]
 })
 export class WalletModule { }

@@ -21,11 +21,14 @@ export class PurchaseAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      title: new FormControl('', Validators.required),
+      title: new FormControl('', [
+        Validators.required,
+        Validators.max(40)
+      ]),
       price: new FormControl(100, [
         Validators.required,
         Validators.min(10),
-        Validators.max(200000),
+        Validators.max(500000),
         Validators.pattern(/^\d+$/)
       ]),
       comment: new FormControl(''),

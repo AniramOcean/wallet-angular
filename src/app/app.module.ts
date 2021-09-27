@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WalletModule } from './components/wallet/wallet.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,15 @@ import { WalletModule } from './components/wallet/wallet.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     WalletModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TuiRootModule,
-],
-  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
+    TuiRootModule
+  ],
+  providers: [
+    {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

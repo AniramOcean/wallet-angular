@@ -5,11 +5,13 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class PurchasesApiMockService implements IPurchasesApiService{
-  add(entity: Purchase): Observable<any> | undefined {
+  add(entity: Purchase): Observable<any>{
+    // @ts-ignore
     return undefined;
   }
 
-  delete(id: number): Observable<any> | undefined {
+  delete(id: string): Observable<any>{
+    // @ts-ignore
     return undefined;
   }
 

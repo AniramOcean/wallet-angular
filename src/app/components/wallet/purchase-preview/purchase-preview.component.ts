@@ -12,7 +12,7 @@ export class PurchasePreviewComponent implements OnInit {
   purchase!: Purchase;
 
   @Input()
-  isCommentVisible = false;
+  isCommentVisible = true;
 
   @Output()
   clicked = new EventEmitter<void>();

@@ -1,7 +1,7 @@
 export interface Purchase {
-  id?: number;
+  id?: any;
   title: string;
   price: number;
   comment?: string;
-  date?: Date;
+  date?: Date | string;
 }
