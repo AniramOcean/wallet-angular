@@ -13,9 +13,9 @@ import {TuiSvgModule} from "@taiga-ui/core";
     PurchasePreviewComponent
   ],
     imports: [
-        CommonModule,
-        TuiBadgeModule,
-        TuiSvgModule,
+      CommonModule,
+      TuiBadgeModule,
+      TuiSvgModule,
     ],
 
 })
