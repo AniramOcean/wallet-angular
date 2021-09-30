@@ -1,12 +1,11 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Purchase} from "../../shared/interfaces/Purchase";
+import {Component, OnInit} from '@angular/core';
+import {Purchase} from "../../../shared/interfaces/Purchase";
 import {PurchasesService} from "./purchases.service";
 
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
   styleUrls: ['./wallet.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WalletComponent implements OnInit {
   isAddPurchaseVisible = false;

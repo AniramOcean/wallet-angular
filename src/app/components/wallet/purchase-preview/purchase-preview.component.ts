@@ -1,11 +1,10 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Purchase} from "../../../shared/interfaces/Purchase";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Purchase} from "../../../../shared/interfaces/Purchase";
 
 @Component({
   selector: 'app-purchase-preview',
   templateUrl: './purchase-preview.component.html',
   styleUrls: ['./purchase-preview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PurchasePreviewComponent implements OnInit {
   @Input()

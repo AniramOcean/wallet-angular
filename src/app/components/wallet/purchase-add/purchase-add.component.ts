@@ -1,13 +1,12 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TuiDay} from "@taiga-ui/cdk";
-import {Purchase} from "../../../shared/interfaces/Purchase";
+import {Purchase} from "../../../../shared/interfaces/Purchase";
 
 @Component({
   selector: 'app-purchase-add',
   templateUrl: './purchase-add.component.html',
   styleUrls: ['./purchase-add.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PurchaseAddComponent implements OnInit {
   @Output() add = new EventEmitter<Purchase>();
