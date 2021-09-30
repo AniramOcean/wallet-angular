@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
-import {Purchase} from "../../shared/interfaces/Purchase";
-import {IPurchasesApiService, IPurchasesApiServiceToken} from "../../shared/interfaces/IPurchasesApiService";
+import {Purchase} from "../../../shared/interfaces/Purchase";
+import {IPurchasesApiService, IPurchasesApiServiceToken} from "../../../shared/interfaces/IPurchasesApiService";
 
 @Injectable()
 export class PurchasesService {
@@ -20,19 +20,19 @@ export class PurchasesService {
     return this.summary;
   }
 
-  setPurchases(purchases: Purchase[]) {
-    this.purchases = purchases;
-    this.updateSum();
-  }
-
   initialize() {
     return this.purchaseApiService.getAll().subscribe(data => {
       this.setPurchases(data);
     })
   }
 
+  setPurchases(purchases: Purchase[]) {
+    this.purchases = purchases;
+    this.updateSum();
+  }
+
   addPurchase(purchase: Purchase) {
-    this.purchaseApiService.add(purchase).subscribe((data) => {
+    this.purchaseApiService.add(purchase).subscribe(() => {
       this.initialize();
     })
   }
