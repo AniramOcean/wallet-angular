@@ -6,6 +6,8 @@ import {HttpClient} from "@angular/common/http";
 import {host} from "../consts/host";
 
 
+const prefix = 'purchases';
+
 @Injectable()
 export class PurchasesApiService implements IPurchasesApiService{
 
@@ -13,15 +15,15 @@ export class PurchasesApiService implements IPurchasesApiService{
   }
 
   add(entity: Purchase): Observable<void> {
-    return this.httpClient.post<void>(`${host}`, entity);
+    return this.httpClient.post<void>(`${host}/${prefix}`, entity);
   }
 
   delete(id: number): Observable<void> {
-    return this.httpClient.delete<void>(`${host}/${id}`);
+    return this.httpClient.delete<void>(`${host}/${prefix}/${id}`);
   }
 
   getAll(): Observable<Purchase[]> {
-    return this.httpClient.get<Purchase[]>(`${host}`);
+    return this.httpClient.get<Purchase[]>(`${host}/${prefix}`);
   }
 
 }

@@ -12,11 +12,11 @@ import {TuiSvgModule} from "@taiga-ui/core";
   exports: [
     PurchasePreviewComponent
   ],
-    imports: [
-      CommonModule,
-      TuiBadgeModule,
-      TuiSvgModule,
-    ],
+  imports: [
+    CommonModule,
+    TuiBadgeModule,
+    TuiSvgModule,
+  ],
 
 })
 export class PurchasePreviewModule { }
