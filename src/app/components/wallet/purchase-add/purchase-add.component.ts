@@ -41,7 +41,7 @@ export class PurchaseAddComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.add.emit(this.form.value);
+    this.add.emit({...this.form.value});
   }
 
   getError(controlName: string): string {

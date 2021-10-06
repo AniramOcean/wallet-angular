@@ -21,8 +21,9 @@ export class PurchasesService {
   }
 
   initialize() {
-    return this.purchaseApiService.getAll().subscribe(data => {
-      this.setPurchases(data);
+    return this.purchaseApiService.getAll()
+      .subscribe(data => {
+        this.setPurchases(data);
     })
   }
 
