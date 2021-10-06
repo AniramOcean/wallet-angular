@@ -7,15 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WalletModule } from './components/wallet/wallet.module';
 import {HttpClientModule} from '@angular/common/http';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import {SidebarModule} from "./components/sidebar/sidebar.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     WalletModule,
+    SidebarModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     TuiRootModule,
