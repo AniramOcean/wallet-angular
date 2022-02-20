@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Purchase} from "../../../shared/interfaces/Purchase";
+import {Purchase} from "../../../../shared/interfaces/Purchase";
 import {PurchasesService} from "./purchases.service";
 
 @Component({

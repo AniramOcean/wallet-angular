@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TuiDay} from "@taiga-ui/cdk";
-import {Purchase} from "../../../../shared/interfaces/Purchase";
+import {Purchase} from "../../../../../shared/interfaces/Purchase";
 
 @Component({
   selector: 'app-purchase-add',

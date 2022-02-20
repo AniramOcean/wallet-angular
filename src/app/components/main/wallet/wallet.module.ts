@@ -6,8 +6,8 @@ import { PurchaseAddModule } from './purchase-add/purchase-add.module';
 import {TuiMoneyModule} from '@taiga-ui/addon-commerce';
 import {TuiSvgModule} from "@taiga-ui/core";
 import {PurchasesService} from "./purchases.service";
-import {IPurchasesApiServiceToken} from "../../../shared/interfaces/IPurchasesApiService";
-import {PurchasesApiService} from "../../../shared/services/purchasesApi.service";
+import {IPurchasesApiServiceToken} from "../../../../shared/interfaces/IPurchasesApiService";
+import {PurchasesApiService} from "../../../../shared/services/purchasesApi.service";
 
 @NgModule({
   declarations: [

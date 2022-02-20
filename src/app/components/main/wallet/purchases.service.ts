@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
-import {Purchase} from "../../../shared/interfaces/Purchase";
-import {IPurchasesApiService, IPurchasesApiServiceToken} from "../../../shared/interfaces/IPurchasesApiService";
+import {Purchase} from "../../../../shared/interfaces/Purchase";
+import {IPurchasesApiService, IPurchasesApiServiceToken} from "../../../../shared/interfaces/IPurchasesApiService";
 
 @Injectable()
 export class PurchasesService {

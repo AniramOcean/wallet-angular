@@ -1,0 +1,29 @@
+<form [formGroup]="form" (submit)='onSubmit()' [tuiTextfieldCleaner]="true">
+  <div class="tui-row tui-row_sme">
+    <div class="tui-col_8">
+      <div class="tui-form__row">
+        <tui-input tuiTextfieldExampleText="Login" formControlName="title">
+          Purchase's name
+          <span class="tui-required"></span>
+        </tui-input>
+        <tui-field-error formControlName="title"></tui-field-error>
+      </div>
+
+      <div class="tui-form__row">
+        <tui-input tuiTextfieldExampleText="Password" formControlName="title">
+          Purchase's name
+          <span class="tui-required"></span>
+        </tui-input>
+        <tui-field-error formControlName="title"></tui-field-error>
+      </div>
+
+      <div class="tui-form__buttons">
+        <button [disabled]="form.invalid"
+                tuiButton class="tui-form__button" size="l" type="submit">
+          Вход
+        </button>
+      </div>
+
+    </div>
+  </div>
+</form>

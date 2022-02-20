@@ -5,10 +5,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WalletModule } from './components/wallet/wallet.module';
-import {HttpClientModule} from '@angular/common/http';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import {SidebarModule} from "./components/sidebar/sidebar.module";
+import { HttpClientModule } from '@angular/common/http';
+import { MainModule } from "./components/main/main.module";
 
 @NgModule({
   declarations: [
@@ -17,8 +15,7 @@ import {SidebarModule} from "./components/sidebar/sidebar.module";
   imports: [
     BrowserModule,
     HttpClientModule,
-    WalletModule,
-    SidebarModule,
+    MainModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     TuiRootModule,

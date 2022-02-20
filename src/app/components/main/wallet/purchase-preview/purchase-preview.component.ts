@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Purchase} from "../../../../shared/interfaces/Purchase";
+import {Purchase} from "../../../../../shared/interfaces/Purchase";
 
 @Component({
   selector: 'app-purchase-preview',
